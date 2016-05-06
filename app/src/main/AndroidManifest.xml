@@ -1,13 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- package：應用程式模組的主套件名稱 -->
+<!-- android:installLocation：安裝位置，設定應用程式安裝的位置 (auto：由系統自動決定 | internalOnly：只安裝在內建儲存位置 | preferExternal：以外部儲存設備 (記憶卡) 為優先) -->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="com.skyeyeh.androidexample">
-
+          package="com.skyeyeh.androidexample"
+          android:installLocation="auto">
     <application
             android:allowBackup="true"
             android:icon="@mipmap/ic_launcher"
             android:label="@string/app_name"
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
+        <!-- 應用程式包含的 Activity 元件 -->
+        <!-- android:name：包含套件名稱的元件類別名稱 -->
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
@@ -15,6 +19,58 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
+
+        <!-- 應用程式需要的額外資訊 -->
+        <!-- <meta-data android:name="com.google.android.maps.v2.API_KEY" android:value="..."></meta-data> -->
+
+        <!-- 應用程式包含的廣播接收元件 -->
+        <!-- android:name：包含套件名稱的元件類別名稱 -->
+        <!-- <receiver android:name=""></receiver> -->
+
+        <!-- 應用程式包含的服務元件 -->
+        <!-- android:name：包含套件名稱的元件類別名稱 -->
+        <!-- <service android:name=""></service> -->
     </application>
 
+    <!-- 設定應用程式需要的螢幕設備 -->
+    <supports-screens>
+        <!-- android:smallScreens：是否支援比 HVGA 小的螢幕 (true | false) -->
+        <android:smallScreens>true</android:smallScreens>
+
+        <!-- android:normalScreens：是否支援 HVGA、WVGA 和 WQVGA 螢幕 (true | false) -->
+        <android:normalScreens>true</android:normalScreens>
+
+        <!-- android:largeScreens：是否支援比 HVGA、WVGA 和 WQVGA 大的螢幕 (true | false) -->
+        <android:largeScreens>true</android:largeScreens>
+
+        <!-- android:xlargeScreens：是否支援像平板電腦的大型螢幕 (true | false) -->
+        <android:xlargeScreens>true</android:xlargeScreens>
+
+        <!-- android:requiresSmallestWidthDp：設定，設定最低螢幕寬度，設定值為畫素 -->
+        <android:requiresSmallestWidthDp>480</android:requiresSmallestWidthDp>
+
+        <!-- android:compatibleWidthLimitDp：設定，設定相容的最大螢幕寬度，設定值為畫素 -->
+        <android:compatibleWidthLimitDp>800</android:compatibleWidthLimitDp>
+
+        <!-- android:largeWidthLimitDp：設定，設定最大螢幕寬度，設定值為畫素 -->
+        <android:largeWidthLimitDp>1024</android:largeWidthLimitDp>
+    </supports-screens>
+
+    <!-- 設定應用程式需要的操作設備 -->
+    <uses-configuration>
+        <!-- android:reqFiveWayNav：是否需要上下左右方向的控制設備 (true | false) -->
+        <android:reqFiveWayNav>false</android:reqFiveWayNav>
+
+        <!-- android:reqHardKeyboard：是否需要實體鍵盤 (true | false) -->
+        <android:reqHardKeyboard>false</android:reqHardKeyboard>
+
+        <!-- android:reqKeyboardType：設定，設定實體鍵盤種類 (undefined | nokeys | qwerty | twelvekey) -->
+        <android:reqKeyboardType>undefined</android:reqKeyboardType>
+
+        <!-- android:reqNavigation：設定，是否需要瀏覽資料用的控制設備 (undefined | nonav | dpad | trackball | wheel) -->
+        <android:reqNavigation>undefined</android:reqNavigation>
+
+        <!-- android:reqTouchScreen：設定，設定觸控螢幕設備種類 (undefined | notouch | stylus | finger) -->
+        <android:reqTouchScreen>finger</android:reqTouchScreen>
+    </uses-configuration>
 </manifest>
