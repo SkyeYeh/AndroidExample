@@ -1,14 +1,21 @@
 apply plugin: 'com.android.application'
 
 android {
+    // 應用程式模組編譯的版本 (Android API Level)
     compileSdkVersion 23
+    // Android 建置工具的版本編號
     buildToolsVersion "23.0.3"
 
     defaultConfig {
+        // 應用程式模組的主套件名稱
         applicationId "com.skyeyeh.androidexample"
+        // 最低版本 (Android API Level)
         minSdkVersion 19
+        // 主要版本 (Android API Level)
         targetSdkVersion 23
+        // 自訂的應用程式模組版本編號
         versionCode 1
+        // 自訂的應用程式模組版本名稱
         versionName "1.0"
     }
     buildTypes {
