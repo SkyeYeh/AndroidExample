@@ -1,4 +1,5 @@
 <resources>
     <!-- 在畫面配置檔中使用的文字資源 -->
     <string name="app_name">AndroidExample</string>
+    <string name="main_text">Hello World!</string>
 </resources>
