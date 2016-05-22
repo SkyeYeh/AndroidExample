@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 在畫面配置檔中使用的文字資源 -->
+    <string name="app_name">Android 範例</string>
+    <string name="main_text">你好世界!</string>
+    <string name="menu_main_search">查詢</string>
+    <string name="menu_main_add">新增</string>
+    <string name="menu_main_revert">還原</string>
+    <string name="menu_main_delete">刪除</string>
+</resources>
