@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- xmlns:android: 這個設定一定要加在第一個標籤，後面還有其它標籤的話，就不用再加入這個設定。 -->
+<RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        tools:context="com.skyeyeh.androidexample.TestActivity">
+
+    <!-- android:layout_width：設定畫面元件的寬度。 -->
+    <!-- android:layout_height：設定畫面元件的高度。 -->
+    <!-- android:margin：設定上、下、左、右為同樣的間隔。 -->
+    <!-- android:padding：設定內容上、下、左、右為同樣的間隔。 -->
+    <!-- android:gravity：設定內容為需要的位置。 -->
+    <!-- android:text：設定畫面元件的文字內容。 -->
+    <!-- android:textSize：設定文字的大小。 -->
+    <!-- android:textAppearance：使用系統的預設值設定文字的大小，設定的格式為「?android:attr/設定值」，有textAppearanceLarge（大）、textAppearanceMedium（中）和　textAppearanceSmall（小）三種設定值。 -->
+    <!-- android:textColor：設定文字的顏色。 -->
+    <!-- px：螢幕畫素。dp：每英吋畫面，160dp為一英吋。sp：和 dp 一樣，不過會根據裝置設定的字型大小自動調整。in：英吋。 mm：公厘。 -->
+    <Button android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="@string/activity_test_button"
+            android:layout_marginTop="20dp" android:padding="20dp" android:gravity="center_vertical|center"
+            android:id="@+id/activity_test_button"/>
+</RelativeLayout>
