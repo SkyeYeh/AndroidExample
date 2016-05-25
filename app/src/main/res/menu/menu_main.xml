@@ -1,15 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+<menu xmlns:tools="http://schemas.android.com/tools" xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:app="http://schemas.android.com/apk/res-auto" tools:context=".MainActivity">
     <item android:id="@+id/search_item" android:icon="@drawable/ic_search_black_24dp"
-          android:title="@string/menu_main_search"
-          app:showAsAction="ifRoom"/>
+          android:title="@string/menu_main_search" app:showAsAction="ifRoom" android:onClick="clickMenuItem"/>
     <item android:id="@+id/add_item" android:icon="@drawable/ic_note_add_black_24dp"
-          android:title="@string/menu_main_add"
-          app:showAsAction="ifRoom"/>
+          android:title="@string/menu_main_add" app:showAsAction="ifRoom" android:onClick="clickMenuItem"/>
     <item android:id="@+id/revert_item" android:icon="@drawable/ic_autorenew_black_24dp"
           android:title="@string/menu_main_revert"
-          app:showAsAction="ifRoom"/>
+          app:showAsAction="ifRoom" android:onClick="clickMenuItem"/>
     <item android:id="@+id/delete_item" android:icon="@drawable/ic_delete_black_24dp"
           android:title="@string/menu_main_delete"
-          app:showAsAction="ifRoom"/>
+          app:showAsAction="ifRoom" android:onClick="clickMenuItem"/>
 </menu>

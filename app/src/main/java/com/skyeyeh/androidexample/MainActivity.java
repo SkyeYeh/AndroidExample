@@ -1,8 +1,10 @@
 package com.skyeyeh.androidexample;
 
+import android.app.AlertDialog;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
@@ -53,5 +55,28 @@ public class MainActivity extends AppCompatActivity {
     public void aboutApp(View view) {
         // 顯示訊息框(Context：通常指定為 this；String | int：設定顯示在訊息框裡面的訊息或文字資源；int：設定訊息框停留在畫面的時間).
         Toast.makeText(this, R.string.app_name, Toast.LENGTH_LONG).show();
+    }
+
+    /**
+     * 使用者選擇所有的選單項目都會呼叫這個方法.
+     *
+     * @param item MenuItem
+     */
+    public void clickMenuItem(MenuItem item) {
+        int itemId = item.getItemId();
+        switch (itemId) {
+            case R.id.search_item:
+                break;
+            case R.id.add_item:
+                break;
+            case R.id.revert_item:
+                break;
+            case R.id.delete_item:
+                break;
+        }
+
+        // 測試用.
+        AlertDialog.Builder dialog = new AlertDialog.Builder(MainActivity.this);
+        dialog.setTitle("MenuItem Test").setMessage(item.getTitle()).setIcon(item.getIcon()).show();
     }
 }
