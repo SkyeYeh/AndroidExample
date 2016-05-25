@@ -8,4 +8,6 @@
     <string name="menu_main_revert">還原</string>
     <string name="menu_main_delete">刪除</string>
     <string name="activity_test_button">你好!介面!</string>
+    <string name="about">這是 Android Tutorial 應用程式</string>
+    <string name="activity_main_about">關於</string>
 </resources>

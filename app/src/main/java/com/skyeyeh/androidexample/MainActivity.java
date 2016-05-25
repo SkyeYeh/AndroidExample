@@ -8,6 +8,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 /**
@@ -33,6 +34,19 @@ public class MainActivity extends AppCompatActivity {
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this, layoutId, data);
         ListView itemList = (ListView) findViewById(R.id.item_list);
         itemList.setAdapter(adapter);
+
+        // 讀取在畫面配置檔已經設定好名稱的元件.
+        TextView showAppName = (TextView) findViewById(R.id.show_app_name);
+        View.OnClickListener listener = new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+                builder.setTitle(R.string.app_name).setMessage(R.string.about).show();
+            }
+        };
+
+        // 註冊點擊監聽物件.
+        showAppName.setOnClickListener(listener);
     }
 
     /**

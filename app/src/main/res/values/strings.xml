@@ -7,4 +7,6 @@
     <string name="menu_main_revert">REVERT</string>
     <string name="menu_main_delete">DELETE</string>
     <string name="activity_test_button">Hello!GUI!</string>
+    <string name="about">This is Android Tutorial application.</string>
+    <string name="activity_main_about">About</string>
 </resources>
