@@ -10,10 +10,13 @@
               android:layout_weight="1" android:layout_margin="@dimen/activity_main_default_margin"
               android:dividerHeight="1sp"/>
 
-    <!-- 文字元件 -->
+    <!-- android:clickable：可點擊的. -->
+    <!-- android:onClick：可點擊的方法名稱. -->
     <TextView android:text="@string/main_text" android:layout_width="match_parent"
               android:layout_height="wrap_content" android:gravity="center"
               android:layout_margin="@dimen/activity_main_default_margin"
-              android:padding="@dimen/activity_main_default_padding"/>
+              android:padding="@dimen/activity_main_default_padding"
+              android:clickable="true"
+              android:onClick="aboutApp"/>
 
 </LinearLayout>
