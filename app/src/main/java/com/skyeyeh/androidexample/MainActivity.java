@@ -6,10 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.ArrayAdapter;
-import android.widget.ListView;
-import android.widget.TextView;
-import android.widget.Toast;
+import android.widget.*;
 
 /**
  * 繼承自 Activity 類別.
@@ -28,12 +25,48 @@ public class MainActivity extends AppCompatActivity {
         // 指定這個元件使用的畫面配置資源.
         setContentView(R.layout.activity_main);
 
-        // 為 ListView 元件設定三筆資料.
-        String[] data = {"骷髏兵", "萬箭齊發", "加農砲", "野豬騎士"};
+        // 為 ListView 元件設定三筆資料. 增加「final」關鍵字，讓巢狀類別中的程式碼使用.
+        final String[] data = {"骷髏兵", "萬箭齊發", "加農砲", "野豬騎士"};
         int layoutId = android.R.layout.simple_list_item_1;
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this, layoutId, data);
         ListView itemList = (ListView) findViewById(R.id.item_list);
-        itemList.setAdapter(adapter);
+        if (itemList != null) {
+            itemList.setAdapter(adapter);
+        }
+
+        // 建立選單項目點擊監聽物件
+        AdapterView.OnItemClickListener itemClickListener = new AdapterView.OnItemClickListener() {
+            /**
+             * 建立選單項目點擊監聽物件.
+             * @param parent 使用者操作的 ListView 物件
+             * @param view 使用者選擇的項目
+             * @param position 使用者選擇的項目編號，第一個是0
+             * @param id id
+             */
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Toast.makeText(MainActivity.this, data[position], Toast.LENGTH_LONG).show();
+            }
+        };
+        // 註冊選單項目點擊監聽物件.
+        itemList.setOnItemClickListener(itemClickListener);
+
+        AdapterView.OnItemLongClickListener itemLongClickListener = new AdapterView.OnItemLongClickListener() {
+            /**
+             * 建立選單項目長按監聽物件.
+             * @param parent 使用者操作的 ListView 物件
+             * @param view 使用者選擇的項目
+             * @param position 使用者選擇的項目編號，第一個是0
+             * @param id id
+             */
+            @Override
+            public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
+                Toast.makeText(MainActivity.this, "A long time ago, " + data[position], Toast.LENGTH_LONG).show();
+                return false;
+            }
+        };
+        // 註冊選單項目長按監聽物件.
+        itemList.setOnItemLongClickListener(itemLongClickListener);
 
         // 讀取在畫面配置檔已經設定好名稱的元件.
         TextView showAppName = (TextView) findViewById(R.id.show_app_name);
@@ -48,7 +81,9 @@ public class MainActivity extends AppCompatActivity {
             }
         };
         // 註冊點擊監聽物件.
-        showAppName.setOnClickListener(clickListener);
+        if (showAppName != null) {
+            showAppName.setOnClickListener(clickListener);
+        }
 
         // 建立長按監聽物件.
         View.OnLongClickListener longClickListener = new View.OnLongClickListener() {
@@ -56,7 +91,7 @@ public class MainActivity extends AppCompatActivity {
             public boolean onLongClick(View v) {
                 // 建立對話框.
                 AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
-                builder.setTitle(R.string.app_name).setMessage(R.string.about).show();
+                builder.setTitle(R.string.app_name).setMessage(R.string.long_about).show();
                 return false;
             }
         };

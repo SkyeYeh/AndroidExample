@@ -10,4 +10,5 @@
     <string name="activity_test_button">Hello!GUI!</string>
     <string name="about">This is Android Tutorial application.</string>
     <string name="activity_main_about">About</string>
+    <string name="long_about">A long time ago, This is Android Tutorial application.</string>
 </resources>
