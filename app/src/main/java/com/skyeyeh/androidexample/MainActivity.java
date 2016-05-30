@@ -37,16 +37,31 @@ public class MainActivity extends AppCompatActivity {
 
         // 讀取在畫面配置檔已經設定好名稱的元件.
         TextView showAppName = (TextView) findViewById(R.id.show_app_name);
-        View.OnClickListener listener = new View.OnClickListener() {
+
+        // 建立點擊監聽物件.
+        View.OnClickListener clickListener = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                // 建立對話框.
                 AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
                 builder.setTitle(R.string.app_name).setMessage(R.string.about).show();
             }
         };
-
         // 註冊點擊監聽物件.
-        showAppName.setOnClickListener(listener);
+        showAppName.setOnClickListener(clickListener);
+
+        // 建立長按監聽物件.
+        View.OnLongClickListener longClickListener = new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                // 建立對話框.
+                AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+                builder.setTitle(R.string.app_name).setMessage(R.string.about).show();
+                return false;
+            }
+        };
+        // 註冊長按監聽物件.
+        showAppName.setOnLongClickListener(longClickListener);
     }
 
     /**
